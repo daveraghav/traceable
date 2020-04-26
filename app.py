@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 from datetime import datetime as dt
 import plotly.express as px
-from dash_auth import BasicAuth
 
 px.set_mapbox_access_token(r'pk.eyJ1IjoiZGF2ZTcwNTUiLCJhIjoiY2s1cGw2eDE5MDJ0ZjNucW9saWxvcXNxbCJ9.M4GmLRvRQ-ehFt4G7TZNYw')
 
@@ -15,14 +14,12 @@ username_passwords = [['admin','password']]
 # Load and process data
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-risk_data = pd.read_pickle('./data/risk_data.pickle')
+risk_data = pd.read_pickle('risk_data.pickle')
 
 # Build Dashboard
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-
-auth = BasicAuth(app,username_passwords)
 
 # Defining Dash Core Components
 
@@ -79,10 +76,6 @@ def update_graph(place_type, visit_date, visit_time):
     )
     fig.update_layout(margin={"r":0,"t":30,"l":0,"b":0})
     return fig
-
-
-
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
