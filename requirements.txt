@@ -5,9 +5,10 @@ dash-html-components==1.0.1
 dash-renderer==1.1.0
 dash-table==4.3.0
 decorator==4.4.0
-numpy==1.14.3
-pandas==0.25.3
-plotly==3.3.0
+numpy
+pandas
+plotly
+plotly-express
 requests==2.21.0
 urllib3==1.24.1
 gunicorn==19.9.0
