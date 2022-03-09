@@ -10,5 +10,5 @@ pandas
 plotly
 plotly-express
 requests==2.21.0
-urllib3==1.24.1
+urllib3==1.26.5
 gunicorn==19.9.0
